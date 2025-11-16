@@ -1,0 +1,42 @@
+# Configuración adicional para desarrollo
+
+# Para compilar y ejecutar el proyecto:
+
+# 1. Asegúrate de tener Maven instalado:
+#    - Descarga desde: https://maven.apache.org/download.cgi
+#    - Sigue las instrucciones de instalación para tu sistema operativo
+
+# 2. Compilar el proyecto:
+mvn clean compile
+
+# 3. Ejecutar las pruebas:
+mvn test
+
+# 4. Empaquetar la aplicación:
+mvn clean package
+
+# 5. Ejecutar la aplicación:
+# Opción A: Con Maven
+mvn spring-boot:run
+
+# Opción B: Con Java directamente (después de empaquetar)
+java -jar target/sistema-asistencia-1.0.0.jar
+
+# 6. Perfiles de ejecución:
+# Desarrollo (H2 - por defecto):
+mvn spring-boot:run
+
+# Producción (MySQL):
+mvn spring-boot:run -Dspring.profiles.active=mysql
+
+# 7. URLs importantes una vez iniciada la aplicación:
+# - Aplicación: http://localhost:8080
+# - Swagger UI: http://localhost:8080/swagger-ui.html
+# - H2 Console: http://localhost:8080/h2-console
+#   - JDBC URL: jdbc:h2:mem:asistencia_db
+#   - Username: sa
+#   - Password: (vacío)
+
+# 8. Credenciales de prueba:
+# - admin/admin123 (ROL: ADMIN)
+# - user/user123 (ROL: USER)
